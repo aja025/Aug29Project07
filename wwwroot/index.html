@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="styles.css">
     <base href="/" />
 </head>
-<body>
+<body ng-controller="MainController as ctrl">
     <div class="container">
-
         <h1>Project07 App</h1>
-
         <ui-view></ui-view>
-
     </div>
 
 <div id = "aa">
@@ -35,6 +32,21 @@
     <script src="/libs/angular-touch.min.js"></script>
     <script src="/libs/ui-bootstrap-tpls.min.js"></script>
     <script src="/libs/angular-ui-router.min.js"></script>
+
+    <label for="num1">First Number</label>
+    <input type="number" ng-model="ctrl.first" id="num1">
+    <label for="num2">Second Number</label>
+    <input type="number" ng-model="ctrl.second" id="num2">
+    <div>
+    <button ng-click="ctrl.add()">Add</button>
+    <button ng-click="ctrl.sub()">Subtract</button>
+    <button ng-click="ctrl.prod()">Multiply</button>
+    <button ng-click="ctrl.div()">Divide</button>
+    </div>
+
+    <div>
+        The result is: {{ctrl.output}}
+    </div>
 
     <!-- controllers -->
     <script src="/ngApp/controllers/mainController.js"></script>
